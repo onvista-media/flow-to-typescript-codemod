@@ -38,6 +38,7 @@ async function gitRenameFile(targetFilePath: string, tsFilePath: string) {
     await git.mv(targetFilePath, tsFilePath);
   } catch (e) {
     // handle the error
+    logger.log('>>>>', e)
   }
 }
 

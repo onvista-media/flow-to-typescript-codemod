@@ -67,7 +67,7 @@ export async function runPrimaryAsync(options: ConvertCommandCliArgs) {
   // Shuffle the array since files near each other in the folder hierarchy have similar
   // workloads and we want to evenly spread workloads out among workers.
   shuffle(flowFilePaths);
-  const cpus = os.cpus().length;
+  const cpus = 1 // os.cpus().length;
   /** The size of a file batch that we send to a worker. */
   const BATCH = Math.min(
     Math.max(Math.trunc(flowFilePaths.length / cpus), 1),
